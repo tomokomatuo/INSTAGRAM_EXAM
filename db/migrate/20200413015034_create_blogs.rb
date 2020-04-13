@@ -1,7 +1,9 @@
 class CreateBlogs < ActiveRecord::Migration[5.2]
   def change
     create_table :blogs do |t|
-      t.test :content
+      t.text :content
+      t.text :image
+      t.references :user, foreign_key: true
     end
   end
 end

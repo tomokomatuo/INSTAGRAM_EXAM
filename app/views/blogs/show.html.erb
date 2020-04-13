@@ -1,0 +1,8 @@
+<h1>ブログ詳細画面</h1>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @blog.image.url %>
+</p>
+<p>内容: <%= @blog.content %></p>
+<%= link_to 'Edit', edit_blog_path(@blog) %> |
+<%= link_to 'Back', blogs_path %></p>
