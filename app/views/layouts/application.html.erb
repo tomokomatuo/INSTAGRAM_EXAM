@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <header class="header">
+     <p>IIInsta</p>
+    </header>
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
@@ -21,5 +24,9 @@
       <%= link_to "Login", new_session_path %>
     <% end %>
     <%= yield %>
+    <footer>
+      <p>運営会社matsuo株式会社</p>
+      <p>© 2015-2016 Copyright matsuo Corp.</p>
+    </footer>
   </body>
 </html>

@@ -7,8 +7,8 @@
   </tr>
 <% @blogs.each do |blog| %>
   <tr>
-    <td><%= image_tag @blog.image %></td>
-    <td><%= @blog.content %></td>
+    <td><%= image_tag blog.image.url %></td>
+    <td><%= blog.content %></td>
     <td><%= link_to '詳細を確認する', blog_path(blog.id) %></td>
     <td><%= link_to "投稿を編集する", edit_blog_path(blog.id), data: { confirm: '本当に編集していいですか？' } %></td>
     <td><%= link_to '投稿を削除する', blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
