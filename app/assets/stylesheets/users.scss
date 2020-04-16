@@ -5,7 +5,8 @@ header {
     width: 100%;
     background-color: #dee2ba;
     height: 54px;
-  }
+}
+
 .header p {
   text-align: left;
   line-height: 55px;
@@ -14,21 +15,39 @@ header {
   margin-block-start: 0em;
   margin-block-end: 0em;
 }
+
 .field {
   margin: 0 auto;
   padding-left: 100px;
   display:table;
 }
+
 .image {
   display: table-cell;
   vertical-align: middle;
 }
+
 .input {
   display: table-cell;
   vertical-align: middle;
 }
+
+.container{
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100%;
+  position: relative;
+  padding: 0;
+}
+
+.wrapper {
+  margin-top: 10px;
+  padding-bottom: 100px;
+  margin: 50;
+}
   
-  footer {
+  
+footer {
     width: 100%;
     background-color:#e6d18e;
     padding: 20px 0 10px 0;
@@ -38,12 +57,15 @@ header {
     font-size: 12px;
     position: absolute;
     bottom: 0;
-  }
-  html {
-    position: relative;
-    min-height: 100%;
-  }
-  body {
+}
+
+html {
+  height: 100%;  
+  font-size: 62.5%;
+}
+
+body {
     text-align: center;
     margin: 0 auto;
-  }
+    height: 100%;
+}

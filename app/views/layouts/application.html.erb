@@ -10,23 +10,27 @@
   </head>
 
   <body>
+    <div class = "container" >
     <header class="header">
-     <p>IIInsta</p>
-    </header>
-    <% if logged_in? %>
-      <%= link_to "Profile", user_path(current_user.id) %>
-      <%= link_to "Logout", session_path(current_user.id), method: :delete %>
-    <% else %>
-      <%= link_to "Sign up", new_user_path %>
-      <%= link_to "Login", new_session_path %>
-    <% end %>
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %>
-    <%= yield %>
-    <footer>
-      <p>運営会社matsuo株式会社</p>
-      <p>© 2015-2016 Copyright matsuo Corp.</p>
-    </footer>
+       <p>IIInsta</p>
+      </header>
+      <% if logged_in? %>
+        <%= link_to "Profile", user_path(current_user.id) %>
+        <%= link_to "Logout", session_path(current_user.id), method: :delete %>
+      <% else %>
+        <%= link_to "Sign up", new_user_path %>
+        <%= link_to "Login", new_session_path %>
+      <% end %>
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "#{key}") %>
+      <% end %>
+      <div class = "wrapper">
+      <%= yield %>
+      </div>
+      <footer>
+        <p>運営会社matsuo株式会社</p>
+        <p>© 2015-2016 Copyright matsuo Corp.</p>
+      </footer>
+      </div>
   </body>
 </html>
