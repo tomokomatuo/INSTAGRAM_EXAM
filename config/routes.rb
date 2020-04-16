@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'blogs/index'
+  root 'tops#index'
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :show, :edit, :update]
   resources :blogs do
