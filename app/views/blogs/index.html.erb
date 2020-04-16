@@ -4,14 +4,16 @@
     <th>画像</th>
     <th>内容</th>
   </tr>
-<% @blogs.each do |blog| %>
+  <% @blogs.each do |blog| %>
   <tr>
     <td><%= image_tag blog.image.url %></td>
     <td><%= blog.content %></td>
     <td><%= link_to '詳細を確認する', blog_path(blog.id) %></td>
+  <% if blog.user_id == current_user.id %>
     <td><%= link_to "投稿を編集する", edit_blog_path(blog.id), data: { confirm: '本当に編集していいですか？' } %></td>
     <td><%= link_to '投稿を削除する', blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+  <% end %>
   </tr>
-<% end %>
+  <% end %>
 </table>
 <%= link_to '新しく投稿する', new_blog_path %>
