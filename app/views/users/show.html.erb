@@ -1,16 +1,10 @@
 <h1><%= @user.name %>のページ</h1>
 <p>メールアドレス: <%= @user.email %></p>
 <%= form_with(model: @user, local: true) do |form| %>
-    <% if @user.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= @user.errors.count %>件のエラーがあります。</h2>
-        <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-    <%= link_to 'プロフィール編集画面へ', edit_user_path(@user) %>
-    </div>
+ <%= image_tag(@user.image.url) if @user.image && @user.image.url %>
+ <%= form.hidden_field :image_cache %>
 <% end %>
+<div>   
+  <%= link_to 'プロフィール編集画面へ', edit_user_path(@user) %>
+  <%= link_to '写真投稿画面へ', new_blog_path(@user) %>
+</div>
