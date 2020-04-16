@@ -2,6 +2,6 @@
 <p>メールアドレス: <%= @user.email %></p>
 <%= image_tag(@user.image.url) if @user.image && @user.image.url %>
 <div>   
-  <%= link_to 'プロフィール編集画面へ', edit_user_path(@user) %>
-  <%= link_to '写真投稿画面へ', new_blog_path(@user) %>
+  <%= link_to 'プロフィール編集画面へ', edit_user_path(@user), class:"btn btn-warning" %>
+  <%= link_to '写真投稿画面へ', new_blog_path(@user), class:"btn btn-danger" %>
 </div>
