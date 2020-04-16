@@ -13,7 +13,6 @@ class UsersController < ApplicationController
    end
    def show
      @user = User.find(params[:id])
-     @user = User.new(user_params)
    end
    def edit
      @user = User.find(params[:id])
