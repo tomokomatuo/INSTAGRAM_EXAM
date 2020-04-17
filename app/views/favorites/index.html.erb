@@ -1,0 +1,6 @@
+<h3>お気に入り一覧</h3>
+
+<% @favorites.each do |favorite| %>
+  <%= image_tag favorite.blog.image.url %>
+<% end %>
+<%= link_to "投稿一覧画面に戻る", blogs_path %>
