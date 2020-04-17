@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
   
   def index
     @blogs = Blog.all
@@ -56,5 +57,12 @@ class BlogsController < ApplicationController
 
   def set_blog
     @blog = Blog.find(params[:id])
+  end
+
+  def ensure_correct_user
+    @blog = Blog.find(params[:id])
+    if current_user.id != @blog.user_id
+      redirect_to blogs_path
+    end
   end
 end

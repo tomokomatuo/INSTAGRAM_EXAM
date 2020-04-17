@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-  
+  # before_action :ensure_correct_user, only: [:new]
+ 
   def new
     if logged_in?
       user = User.find(session[:user_id])
@@ -24,5 +25,14 @@ class SessionsController < ApplicationController
     flash[:notice] = 'ログアウトしました'
     redirect_to new_session_path
   end
+
+  private
+
+  # def ensure_correct_user
+  #   @user = User.find(params[:id])
+  #   if current_user.id != @user.id
+  #     redirect_to blogs_path
+  #   end
+  # end
   
 end
